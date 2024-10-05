@@ -1,3 +1,116 @@
+@media screen and (max-width: 1680px) {
+    .heroSlick .heroDetails {
+        margin: 30px 0;
+        gap: 16px;
+    }
+    .heroSlick {
+        height: calc(100vh - 136px);
+    }
+    .customBtn {
+        padding: 18px 30px;
+        border-radius: 10px;
+    }
+    .heroSlick .slick-dots li button {
+        width: 10px;
+        height: 10px;
+    }
+    .heroSlick .slick-dots li.slick-active button {
+        width: 15px;
+        height: 15px;
+    }
+    .aboutWrap .aboutImg {
+        max-height: 640px;
+    }
+    .aboutWrap .aboutInner p:first-of-type {
+        margin-top: 20px;
+    }
+    .aboutWrap .aboutInner p {
+        margin-top: 10px;
+    }
+    .aboutWrap .aboutInner h3 {
+        margin-top: 30px;
+    }
+    .chooseContent p {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .chooseContent li {
+        gap: 8px 16px;
+        margin-bottom: 30px;
+    }
+    .aboutWrap {
+        padding: 100px 0;
+    }
+    
+    
+    
+}
+
+@media screen and (max-width: 1570px) {
+    .heroSlick {
+        height: calc(100vh - 121px);
+    }
+    .chooseImg {
+        height: 570px;
+    }
+    .heroSlick .slick-dots {
+        bottom: 20px;
+    }
+    .heroSlick .heroDetails {
+        margin: 24px 0;
+        gap: 12px;
+    }
+}
+@media screen and (max-width: 1500px) {
+    .aboutWrap .aboutImg {
+        max-height: 560px;
+    }
+}
+@media screen and (max-width: 1370px) {
+    .heroSlick {
+        height: calc(100vh - 105px);
+    }
+    .customBtn {
+        padding: 14px 20px;
+        border-width: 1px;
+        font-size: 16px;
+    }
+    .heroSlick .slick-dots li button {
+        width: 8px;
+        height: 8px;
+    }
+    .heroSlick .slick-dots li.slick-active button {
+        width: 12px;
+        height: 12px;
+    }
+    .aboutWrap {
+        padding: 70px 0;
+    }
+    .aboutWrap .aboutInner ul {
+        gap: 12px;
+    }
+    .aboutWrap .aboutInner li {
+        padding-left: 20px;
+    }
+    .aboutWrap .aboutInner h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .chooseImg {
+        height: 500px;
+    }
+    .chooseContent p {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .chooseContent li {
+        gap: 4px 16px;
+        margin-bottom: 20px;
+    }
+    .heroSlick .slick-dots {
+        gap: 20px;
+    }
+}
 // Ipad pro 
 // `xl` applies to large devices (desktops, less than 1200px)
 @media (max-width: 1199.98px) { 

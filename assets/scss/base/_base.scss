@@ -92,7 +92,8 @@ ul {
             border: 0;
             color: inherit;
             padding: 0;
-            &.active{
+
+            &.active {
                 outline: none;
                 border: 0;
             }
@@ -141,7 +142,8 @@ ul {
 .fw300 {
     font-weight: 300 !important;
 }
-.customBtn{
+
+.customBtn {
     width: fit-content;
     padding: 20px 40px;
     line-height: 1;
@@ -149,7 +151,27 @@ ul {
     font-weight: 500;
     border: 2px solid transparent;
     border-radius: 15px;
+    transition: all 0.5s ease;
 }
-.slick-track{
+
+.slick-track {
     display: flex;
+}
+
+.tickIcon {
+    border-bottom: 4px solid $secondaryColor;
+    border-right: 4px solid $secondaryColor;
+    transform: rotate(45deg);
+    width: 10px;
+    height: 18px;
+    display: inline-block;
+}
+
+@media screen and (max-width: 1370px) {
+    .tickIcon {
+        border-bottom: 3px solid #fcdf61;
+        border-right: 3px solid #fcdf61;
+        width: 8px;
+        height: 15px;
+    }
 }

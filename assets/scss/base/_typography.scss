@@ -53,3 +53,39 @@
 h1,h2{
     font-weight: 700;
 }
+
+@media screen and (max-width: 1680px) {
+    :root{
+        --fs65: 50px;
+        --fs50: 40px;
+        --fs40: 35px;
+        --fs30: 24px;
+        --fs22: 18px;
+        --fs18: 16px;
+        --fs16: 15px;
+        --p100: 80px;
+        --m50: 40px;
+    }
+}
+@media screen and (max-width: 1570px) {
+    :root{
+        --fs65: 45px;
+        --fs50: 35px;
+        --fs40: 30px;
+        --fs30: 22px;
+        --fs22: 17px;
+    }
+}
+@media screen and (max-width: 1370px) {
+    :root{
+        --fs65: 40px;
+        --fs50: 30px;
+        --fs40: 22px;
+        --fs30: 20px;
+        --fs22: 16px;
+        --fs18: 15px;
+        --fs16: 14px;
+        --p100: 60px;
+        --m50: 20px;
+    }
+}
