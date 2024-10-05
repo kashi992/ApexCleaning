@@ -1,0 +1,229 @@
+// hero sec start
+.heroSlick {
+    position: relative;
+    z-index: 1;
+    height: calc(100vh - 170px);
+
+    .heroImg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+
+        &::before {
+            content: "";
+            background-color: rgba($color: #000000, $alpha: 0.4);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 0;
+        }
+    }
+
+    .slick-list,
+    .slick-track {
+        height: 100%;
+    }
+
+    .container {
+        height: 100%;
+        color: $whiteColor;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    h4 {
+        color: $primaryColor__;
+    }
+
+    .heroDetails {
+        margin: 40px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        p {
+            font-size: var(--fs30);
+
+        }
+    }
+
+    .slick-dots {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 30px;
+        display: flex;
+        gap: 30px;
+
+
+
+        li {
+            button {
+                font-size: 0;
+                background: $whiteColor;
+                padding: 0;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                border: 2px solid transparent;
+            }
+
+            &.slick-active {
+                button {
+                    background: unset;
+                    border-color: $whiteColor;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+    }
+
+    .customBtn {
+        border-color: $whiteColor;
+        background-color: unset;
+        color: $whiteColor;
+    }
+}
+
+// hero sec end
+
+// about sec start
+.aboutWrap {
+    position: relative;
+    z-index: 1;
+    padding: 150px 0;
+
+    &::before {
+        content: "";
+        background-image: url(../img/aboutUsBg.png);
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .aboutImg {
+        position: absolute;
+        right: 0;
+        width: 44%;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 100%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    .aboutInner {
+        width: 60%;
+
+        p {
+            margin-top: 16px;
+
+            &:first-of-type {
+                margin-top: 35px;
+            }
+        }
+
+        h3 {
+            margin-top: 40px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            padding-left: 25px;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-bottom: 4px solid $secondaryColor;
+                border-right: 4px solid $secondaryColor;
+                transform: rotate(45deg);
+                width: 10px;
+                height: 18px;
+            }
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 16px;
+        }
+    }
+}
+
+// about sec end
+
+// why choose us sec end
+.chooseImg {
+    width: calc(50% - 15px);
+    height: 630px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.chooseContent {
+    width: calc(50% - 15px);
+
+    p {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    span{
+        display: inline-block;
+    }
+    li{
+        display: grid;
+        gap: 10px 20px;
+        align-items: center;
+        grid-template-columns: 20px calc(100% - 40px);
+        margin-bottom: 40px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        span{
+            line-height: 1.5;
+            grid-column: 2;
+        }
+        i{
+            font-size: 22px;
+            color: $primaryColor;
+        }
+    }
+    h4{
+        width: 100%;
+    }
+}
+
+// why choose us sec end

@@ -1,0 +1,33 @@
+.topBar{
+    background-color: $secondaryColor;
+    height: 50px;
+    .contactBox{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        &+ .contactBox{
+            margin-left: 40px;
+        }
+        i{
+            color: $primaryColor;
+        }
+    }
+    .socialIcon{
+        width: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        i{
+            color: $blackColor;
+        }
+    }
+    span{
+        font-size: 14px;
+        display: block;
+        color: $blackColor;
+        a{
+            color: inherit;
+        }
+    }
+  
+}
