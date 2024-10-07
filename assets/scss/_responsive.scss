@@ -41,9 +41,61 @@
     .aboutWrap {
         padding: 100px 0;
     }
-    
-    
-    
+    .serviceBox i {
+        font-size: 70px;
+    }
+    .serviceBox h3 {
+        margin-top: 30px;
+    }
+    .serviceBox .tickIcon {
+        width: 10px;
+        height: 18px;
+    }
+    .serviceBox li {
+        margin-bottom: 10px;
+        grid-template-columns: 16px 1fr;
+        gap: 8px;
+    }
+    .serviceBox ul {
+        margin-bottom: 40px;
+        margin-top: 24px;
+        width: 100%;
+    }
+    .serviceBox .customBtn {
+        height: 65px;
+    }
+    .serviceBox {
+        padding: 40px;
+        margin: 0 10px;
+    }
+    .servicesWrap .slick-arrow {
+        width: 50px;
+        height: 50px;
+    }
+    .chevron {
+        width: 16px;
+        height: 16px;
+    }   
+    .chooseImg {
+        height: 540px;
+    } 
+    .statisticsBox span {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    .statisticsWrap {
+        padding: 120px 0;
+    }
+    .contactRow {
+        padding: 35px 0;
+    }
+    .statisticsBox .iconBox i {
+        font-size: 60px;
+    }
+    .contactRow .customBtn {
+        padding-left: 55px;
+        padding-right: 55px;
+    }
 }
 
 @media screen and (max-width: 1570px) {
@@ -51,7 +103,7 @@
         height: calc(100vh - 121px);
     }
     .chooseImg {
-        height: 570px;
+        height: 520px;
     }
     .heroSlick .slick-dots {
         bottom: 20px;
@@ -114,7 +166,9 @@
 // Ipad pro 
 // `xl` applies to large devices (desktops, less than 1200px)
 @media (max-width: 1199.98px) { 
-  
+    .heroSlick .heroImg img {
+        object-fit: cover;
+    }
  }
 
 //  ipad 

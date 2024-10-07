@@ -1,26 +1,7 @@
 .topBar{
     background-color: $secondaryColor;
     height: 50px;
-    .contactBox{
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        &+ .contactBox{
-            margin-left: 40px;
-        }
-        i{
-            color: $primaryColor;
-        }
-    }
-    .socialIcon{
-        width: 100px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        i{
-            color: $blackColor;
-        }
-    }
+  
     span{
         font-size: 14px;
         display: block;
@@ -31,7 +12,26 @@
     }
   
 }
-
+.contactBox{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &+ .contactBox{
+        margin-left: 40px;
+    }
+    i{
+        color: $primaryColor;
+    }
+}
+.socialIcon{
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    i{
+        color: $blackColor;
+    }
+}
 @media screen and (max-width: 1680px) {
     .topBar {
         height: 36px;
@@ -41,7 +41,7 @@
     .topBar .contactBox + .contactBox {
         margin-left: 24px;
     }
-    .topBar .socialIcon {
+    .socialIcon {
         width: 80px;
     }
     .topBar span {

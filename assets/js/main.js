@@ -66,4 +66,41 @@ $(document).ready(function () {
         }]
     });
     // hero slick end
+
+    // service slick start 
+    $('.serviceInner').slick({
+        speed: 1500,
+        autoplay: false,
+        autoplaySpeed: 3000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: true,
+        swipe: true,
+        swipeToSlide: true,
+        dots: false,
+
+        nextArrow: '.slick-next-service',
+        prevArrow: '.slick-prev-service',
+
+        responsive: [{
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 1,
+            }
+
+        }, {
+            breakpoint: 800,
+            settings: {
+                slidesToShow: 1,
+            }
+        }, {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        }]
+    });
+    // service slick end
 });
