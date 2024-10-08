@@ -70,7 +70,7 @@ $(document).ready(function () {
     // service slick start 
     $('.serviceInner').slick({
         speed: 1500,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 3000,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -84,23 +84,62 @@ $(document).ready(function () {
         prevArrow: '.slick-prev-service',
 
         responsive: [{
-            breakpoint: 1024,
+            breakpoint: 1100,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
             }
 
         }, {
             breakpoint: 800,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
             }
         }, {
             breakpoint: 480,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
+                arrow: false,
             }
         }]
     });
     // service slick end
+
+     //    onclick outside navbar 
+    var $navbar = $('#navbarSupportedContent');
+    var $navbarToggler = $('.navbar-toggler');
+    var $crossIcon = $('.crossIcon');
+    var $overlay = $('.overlay');
+
+    $navbarToggler.click(function (event) {
+        event.stopPropagation(); // Prevent event from propagating to higher elements
+
+        // Toggle 'show' class on navbar when toggler is clicked
+        $navbar.toggleClass("show");
+        
+        // Check the new state after toggling
+        if ($navbar.hasClass("show")) {
+            $overlay.addClass("__show");  // Add '__show' class to overlay if navbar now has 'show'
+        } else {
+            $overlay.removeClass("__show");  // Remove '__show' if navbar does not have 'show'
+        }
+    });
+
+    // Setup click handler for cross icon
+    $crossIcon.click(function (event) {
+        event.stopPropagation(); // Stop propagation to avoid triggering document click
+        $navbar.removeClass("show");
+        $overlay.removeClass("__show");  // Ensure overlay class is removed when cross is clicked
+    });
+
+    // Click outside navbar
+    $(document).click(function (event) {
+        // Check if the click is outside the navbar and not on the navbar toggler itself
+        if (!$navbar.is(event.target) && $navbar.has(event.target).length === 0 && !$navbarToggler.is(event.target) && !$crossIcon.is(event.target)) {
+            $navbar.removeClass("show");
+            $overlay.removeClass("__show");  // Also remove '__show' if clicking outside the navbar area
+        }
+    });
+    //    onclick outside navbar 
 });
+

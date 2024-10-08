@@ -89,3 +89,23 @@ h1,h2{
         --m50: 20px;
     }
 }
+@media screen and (max-width: 1198.99px) {
+    :root{
+        --fs65: 35px;
+        --fs50: 25px;
+        --fs40: 20px;
+        --fs30: 19px;
+        --fs22: 15px;
+        --fs18: 14px;
+        --fs16: 13px;
+        --p100: 50px;
+    }
+}
+@media screen and (max-width: 575px) {
+    :root{
+        --fs65: 30px;
+        --fs50: 23px;
+        --fs40: 19px;
+        --fs30: 16px;
+    }
+}

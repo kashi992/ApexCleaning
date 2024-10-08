@@ -127,6 +127,7 @@ ul {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:focus-visible {
@@ -374,6 +375,26 @@ h1, h2 {
     --m50: 20px;
   }
 }
+@media screen and (max-width: 1198.99px) {
+  :root {
+    --fs65: 35px;
+    --fs50: 25px;
+    --fs40: 20px;
+    --fs30: 19px;
+    --fs22: 15px;
+    --fs18: 14px;
+    --fs16: 13px;
+    --p100: 50px;
+  }
+}
+@media screen and (max-width: 575px) {
+  :root {
+    --fs65: 30px;
+    --fs50: 23px;
+    --fs40: 19px;
+    --fs30: 16px;
+  }
+}
 .topBar {
   background-color: #fcdf61;
   height: 50px;
@@ -428,6 +449,11 @@ h1, h2 {
     height: 30px;
   }
 }
+@media screen and (max-width: 575px) {
+  .topBar span {
+    display: none;
+  }
+}
 .navWrap {
   position: relative;
   width: 100%;
@@ -440,6 +466,7 @@ h1, h2 {
   position: fixed;
   animation: navTop 1s ease;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  z-index: 3;
 }
 .navWrap .navbar {
   padding: 10px 0;
@@ -447,6 +474,20 @@ h1, h2 {
 }
 .navWrap .navbar .navbar-nav {
   gap: 20px;
+}
+.navWrap .navbar .navbar-toggler {
+  padding: 0;
+  border: 0;
+}
+.navWrap .navbar .navbar-toggler:focus {
+  box-shadow: none;
+  border: 0;
+  outline: 0;
+}
+.navWrap .navbar .navbar-toggler:focus-visible {
+  box-shadow: none;
+  border: 0;
+  outline: 0;
 }
 .navWrap .navbar-brand {
   padding: 0 !important;
@@ -557,6 +598,59 @@ h1, h2 {
     padding: 10px 16px;
   }
 }
+@media screen and (max-width: 991px) {
+  .navWrap {
+    z-index: auto;
+  }
+  .navWrap .navbar {
+    height: auto;
+  }
+  .navWrap .navbar-brand {
+    height: 59px;
+    display: inline-block;
+  }
+  .navWrap .navbar-collapse {
+    position: fixed;
+    box-shadow: 0 15px 30px rgba(85, 85, 85, 0.16);
+    width: 300px;
+    background: #fff;
+    height: 100% !important;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    z-index: 3;
+  }
+  .navWrap .navbar-collapse.show {
+    transform: translateX(0);
+  }
+  .navWrap .navbar .navbar-nav {
+    margin: 20px 0 !important;
+    width: 100%;
+    height: 100%;
+  }
+  .navWrap .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 10px 0;
+  }
+  .topBar .contactBox + .contactBox {
+    margin-left: 16px;
+  }
+  .contactBox {
+    gap: 6px;
+  }
+  .socialIcon {
+    width: 65px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .navWrap .navbar-collapse {
+    width: 240px;
+  }
+}
 .footerBox {
   max-width: 620px;
   width: fit-content;
@@ -634,6 +728,30 @@ h1, h2 {
     max-width: 430px;
   }
 }
+@media screen and (max-width: 1198.99px) {
+  .footerBox {
+    max-width: 360px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .footerBtm {
+    padding: 20px 0;
+    margin-top: 0;
+  }
+  .footerBox {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  .footerBox h3 {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .footerBox .footerLogo {
+    max-width: 150px;
+    margin-bottom: 16px;
+  }
+}
 .scrollTop {
   position: fixed;
   width: 50px;
@@ -687,6 +805,35 @@ h1, h2 {
   border-right-color: #fcdf61;
   border-top-color: #fcdf61;
   transform: rotate(45deg) translate(-3px, 3px);
+}
+
+.crossIcon {
+  color: rgba(33, 37, 41, 0.75);
+  font-size: 25px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+}
+.crossIcon i {
+  font-size: inherit;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 1000vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s ease;
+  z-index: 2;
+}
+.overlay.__show {
+  opacity: 1;
+  visibility: visible;
 }
 
 .heroSlick {
@@ -1061,8 +1208,20 @@ h1, h2 {
   font-size: var(--fs65);
   display: block;
   font-weight: 600;
-  margin-top: 80px;
+  padding-top: 40px;
+  margin-top: 40px;
   margin-bottom: 20px;
+  position: relative;
+}
+.statisticsBox span::before {
+  content: "";
+  background-color: #fcdf61;
+  height: 2px;
+  width: 35px;
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  top: 0px;
 }
 .statisticsBox p {
   font-size: var(--fs30);
@@ -1098,6 +1257,151 @@ h1, h2 {
 .contactRow .customBtn:hover {
   background-color: #fcdf61;
   color: #fff;
+}
+
+.smallBanner {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  padding: 190px 0;
+}
+.smallBanner h1 {
+  text-align: center;
+}
+.smallBanner .breadcrumbWrap {
+  position: absolute;
+  top: 25px;
+}
+.smallBanner .breadcrumbWrap .breadcrumb-item {
+  font-size: var(--fs22);
+  color: #fff;
+  font-weight: 500;
+}
+.smallBanner .breadcrumbWrap .breadcrumb-item a {
+  color: inherit;
+  font-size: inherit;
+}
+.smallBanner .breadcrumbWrap .breadcrumb-item.active {
+  color: #fcdf61;
+}
+.smallBanner .breadcrumbWrap .breadcrumb-item::before {
+  color: #fff;
+}
+.smallBanner::before {
+  content: "";
+  background-image: url(../img/statisticsBg.jpg);
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-position: bottom;
+  z-index: -2;
+}
+.smallBanner::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.serviceUl {
+  margin-bottom: 50px;
+}
+.serviceUl li + li {
+  margin-top: 16px;
+}
+.serviceUl li p {
+  width: 80%;
+}
+
+.serviceBox.__Box {
+  padding: 0 0px 40px 0px;
+}
+.serviceBox.__Box li {
+  width: 85%;
+}
+.serviceBox.__Box .servicePkg {
+  margin-top: 0;
+  padding: 25px 0;
+  margin-bottom: 32px;
+  width: 100%;
+  border-bottom: 1px solid #15bae8;
+}
+.serviceBox.__Box .servicePrice {
+  width: 100%;
+}
+.serviceBox.__Box .servicePrice b {
+  font-size: 90px;
+  font-weight: 600;
+}
+.serviceBox.__Box .servicePrice sup {
+  font-size: 24px;
+  top: -45px;
+}
+.serviceBox.__Box .servicePrice p {
+  font-size: var(--fs18);
+}
+
+.faqsInner .accordion-button {
+  flex-direction: row-reverse;
+  justify-content: start;
+  padding: 15px 0 15px 85px;
+  font-size: var(--fs30);
+  font-weight: 500;
+  margin-bottom: 15px;
+  transition: all 0.5s ease;
+}
+.faqsInner .accordion-button:hover {
+  color: #15bae8;
+}
+.faqsInner .accordion-button:hover::after {
+  border-color: #15bae8;
+  color: #15bae8;
+}
+.faqsInner .accordion-button::after {
+  content: "+";
+  background-image: unset;
+  margin: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  border: 2px solid #fcdf61;
+  border-radius: 50%;
+  color: #fcdf61;
+  font-size: 40px;
+}
+.faqsInner .accordion-button:not(.collapsed)::after {
+  content: "-";
+}
+.faqsInner .accordion-item {
+  margin-bottom: 24px;
+}
+.faqsInner .accordion-item:last-child {
+  margin-bottom: 0;
+}
+.faqsInner .accordion-body {
+  font-size: var(--fs22);
+  line-height: 1.3;
+  padding: 0 0 25px 85px;
+}
+
+.threeColGrid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.threeColGrid .serviceBox.__Box {
+  margin: 0;
 }
 
 @media screen and (max-width: 1680px) {
@@ -1165,6 +1469,7 @@ h1, h2 {
   }
   .serviceBox .customBtn {
     height: 65px;
+    border-radius: 12px;
   }
   .serviceBox {
     padding: 40px;
@@ -1182,7 +1487,6 @@ h1, h2 {
     height: 540px;
   }
   .statisticsBox span {
-    margin-top: 30px;
     margin-bottom: 10px;
   }
   .statisticsWrap {
@@ -1197,6 +1501,28 @@ h1, h2 {
   .contactRow .customBtn {
     padding-left: 55px;
     padding-right: 55px;
+  }
+  .smallBanner {
+    padding: 130px 0;
+  }
+  .serviceBox.__Box .servicePrice b {
+    font-size: 80px;
+  }
+  .serviceBox.__Box .servicePrice sup {
+    font-size: 22px;
+    top: -40px;
+  }
+  .faqsInner .accordion-button::after {
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+  }
+  .faqsInner .accordion-button {
+    padding: 15px 0 15px 70px;
+    margin-bottom: 10px;
+  }
+  .faqsInner .accordion-body {
+    padding: 0 0 15px 70px;
   }
 }
 @media screen and (max-width: 1570px) {
@@ -1220,6 +1546,9 @@ h1, h2 {
   }
 }
 @media screen and (max-width: 1370px) {
+  .statisticsBox .iconBox {
+    min-height: auto;
+  }
   .heroSlick {
     height: calc(100vh - 105px);
   }
@@ -1263,9 +1592,214 @@ h1, h2 {
   .heroSlick .slick-dots {
     gap: 20px;
   }
+  .smallBanner {
+    padding: 100px 0;
+  }
+  .serviceUl li + li {
+    margin-top: 10px;
+  }
+  .serviceBox.__Box .servicePkg {
+    padding: 12px 0;
+    margin-bottom: 12px;
+  }
+  .serviceBox.__Box .servicePrice b {
+    font-size: 60px;
+  }
+  .serviceBox.__Box .servicePrice sup {
+    font-size: 18px;
+    top: -30px;
+  }
+  .serviceBox .customBtn {
+    height: 50px;
+    border-radius: 8px;
+  }
+  .faqsInner .accordion-button::after {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 1;
+  }
+  .faqsInner .accordion-button {
+    padding: 15px 0 15px 50px;
+    margin-bottom: 6px;
+  }
+  .faqsInner .accordion-body {
+    padding: 0 0 10px 50px;
+  }
+  .faqsInner .accordion-item {
+    margin-bottom: 8px;
+  }
+  .serviceBox.__Box {
+    padding: 0 0px 30px 0px;
+  }
 }
 @media (max-width: 1199.98px) {
   .heroSlick .heroImg img {
     object-fit: cover;
+  }
+  .aboutWrap .aboutImg {
+    max-height: 100%;
+    height: 520px;
+    position: unset;
+  }
+  .aboutWrap .aboutImg img {
+    object-fit: contain;
+  }
+  .aboutWrap {
+    padding: 60px 0 0 0;
+  }
+  .aboutWrap .aboutInner {
+    width: 100%;
+  }
+  .servicesWrap .slick-arrow.slick-prev-service {
+    left: 10px;
+  }
+  .servicesWrap .slick-arrow.slick-next-service {
+    right: 10px;
+  }
+  .statisticsBox .iconBox i {
+    font-size: 40px !important;
+  }
+  .statisticsWrap {
+    padding: 70px 0;
+  }
+  .contactRow .contactRowInner {
+    grid-template-areas: "a b c" "d d d";
+    gap: 16px;
+  }
+  .contactRow .customBtn {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-right: auto;
+  }
+}
+@media (max-width: 991.98px) {
+  .serviceBox li {
+    width: 100%;
+  }
+  .serviceBox .customBtn {
+    height: 50px;
+    border-radius: 10px;
+  }
+  .chooseImg {
+    width: 100%;
+    order: 2;
+    margin-top: 20px;
+  }
+  .chooseContent {
+    width: 100%;
+  }
+  .statisticsBox {
+    width: calc(50% - 10px);
+  }
+  .contactRow a,
+  .contactRow i {
+    gap: 10px;
+  }
+  .contactRow .contactRowInner {
+    grid-template-areas: "a b" "c d";
+    justify-content: space-between;
+  }
+  .contactRow .customBtn {
+    margin-right: 0;
+  }
+  .statisticsWrap .d-flex.justify-content-between.align-items-center.flex-wrap {
+    gap: 35px 0;
+  }
+  .serviceUl li p {
+    width: 100%;
+  }
+  .faqsInner .accordion-button::after {
+    width: 30px;
+    height: 30px;
+  }
+  .serviceBox .tickIcon {
+    width: 8px;
+    height: 15px;
+  }
+  .serviceBox li {
+    grid-template-columns: 10px 1fr;
+  }
+  .serviceBox.__Box .servicePrice b {
+    font-size: 50px;
+    line-height: 1.1;
+  }
+  .serviceBox.__Box .servicePrice sup {
+    font-size: 16px;
+    top: -22px;
+  }
+  .faqsInner .accordion-button {
+    padding: 10px 0 10px 40px;
+  }
+  .faqsInner .accordion-body {
+    padding: 0 0 10px 40px;
+  }
+  .threeColGrid {
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 575.98px) {
+  .aboutWrap .aboutInner ul {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+  .scrollTop {
+    width: 40px;
+    height: 40px;
+    right: 20px;
+    bottom: 20px;
+  }
+  .servicesWrap p {
+    width: 100%;
+  }
+  .serviceBox i {
+    font-size: 55px;
+  }
+  .servicesWrap .slick-arrow {
+    display: none !important;
+  }
+  .serviceBox {
+    margin: 0 5px;
+    padding: 24px;
+  }
+  .chooseImg {
+    height: 375px;
+  }
+  .servicesWrap .slick-list {
+    padding: 6px !important;
+  }
+  .contactRow .contactRowInner {
+    grid-template-areas: "a" "b" "c" "d";
+    justify-content: center;
+  }
+  .contactRow .customBtn {
+    margin-right: auto;
+  }
+  .statisticsWrap {
+    padding: 50px 0;
+  }
+  .statisticsBox .iconBox i {
+    font-size: 28px !important;
+  }
+  .statisticsBox .iconBox {
+    min-height: auto;
+  }
+  .aboutWrap .aboutImg {
+    height: 310px;
+  }
+  .aboutWrap .aboutImg img {
+    object-position: bottom;
+  }
+  .statisticsBox span {
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+  .threeColGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .serviceUl {
+    margin-bottom: 40px;
   }
 }/*# sourceMappingURL=style.css.map */
