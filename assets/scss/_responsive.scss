@@ -153,6 +153,12 @@
         padding: 20px 28px;
         margin-top: 20px;
     }
+    .serviceBox .serviceIcon {
+        height: 100px;
+    }
+    .statisticsBox .iconBox {
+        height: 100px;
+    }
 }
 
 @media screen and (max-width: 1570px) {
@@ -181,10 +187,6 @@
 }
 
 @media screen and (max-width: 1370px) {
-    .statisticsBox .iconBox {
-        min-height: auto;
-    }
-
     .heroSlick {
         height: calc(100vh - 105px);
     }
@@ -327,7 +329,12 @@
     
     // service page end
   
-    
+    .serviceBox .serviceIcon {
+        height: 85px;
+    }
+    .statisticsBox .iconBox {
+        height: 85px;
+    }
     
 }
 
@@ -483,6 +490,16 @@
             grid-column-end: 4;
         }
     }
+    .statisticsBox span {
+        padding-top: 30px;
+        margin-top: 30px;
+    }
+    .serviceBox .serviceIcon {
+        height: 75px;
+    }
+    .statisticsBox .iconBox {
+        height: 75px;
+    }
 }
 
 //  mobile 
@@ -546,7 +563,7 @@
     }
 
     .statisticsBox .iconBox {
-        min-height: auto;
+        height: 60px;
     }
 
     .aboutWrap .aboutImg {

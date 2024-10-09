@@ -658,9 +658,11 @@ h1, h2 {
 .footerBox {
   max-width: 620px;
   width: fit-content;
+  color: #fff;
 }
 .footerBox p {
   line-height: 1.5;
+  color: inherit;
 }
 .footerBox .footerLogo {
   max-width: 200px;
@@ -676,7 +678,7 @@ h1, h2 {
 .footerBox li a {
   display: grid;
   grid-auto-columns: 18px 1fr;
-  color: #000;
+  color: #fff;
   gap: 16px;
   align-items: center;
   line-height: 1.5;
@@ -1104,6 +1106,9 @@ h1, h2 {
   align-items: center;
   margin: 0 15px;
 }
+.serviceBox .serviceIcon {
+  height: 128px;
+}
 .serviceBox i {
   font-size: 90px;
   color: #15bae8;
@@ -1201,15 +1206,10 @@ h1, h2 {
   width: calc(25% - 10px);
 }
 .statisticsBox .iconBox {
-  min-height: 98px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+  height: 128px;
 }
-.statisticsBox .iconBox i {
-  font-size: 65px;
-  display: block;
+.statisticsBox .iconBox img {
+  height: 100%;
 }
 .statisticsBox span {
   font-size: var(--fs65);
@@ -1618,6 +1618,12 @@ h1, h2 {
     padding: 20px 28px;
     margin-top: 20px;
   }
+  .serviceBox .serviceIcon {
+    height: 100px;
+  }
+  .statisticsBox .iconBox {
+    height: 100px;
+  }
 }
 @media screen and (max-width: 1570px) {
   .heroSlick {
@@ -1640,9 +1646,6 @@ h1, h2 {
   }
 }
 @media screen and (max-width: 1370px) {
-  .statisticsBox .iconBox {
-    min-height: auto;
-  }
   .heroSlick {
     height: calc(100vh - 105px);
   }
@@ -1768,6 +1771,12 @@ h1, h2 {
   .chevron.__right {
     transform: rotate(45deg) translate(-2px, 2px);
   }
+  .serviceBox .serviceIcon {
+    height: 85px;
+  }
+  .statisticsBox .iconBox {
+    height: 85px;
+  }
 }
 @media (max-width: 1199.98px) {
   .heroSlick .heroImg img {
@@ -1889,6 +1898,16 @@ h1, h2 {
     grid-column-start: 2;
     grid-column-end: 4;
   }
+  .statisticsBox span {
+    padding-top: 30px;
+    margin-top: 30px;
+  }
+  .serviceBox .serviceIcon {
+    height: 75px;
+  }
+  .statisticsBox .iconBox {
+    height: 75px;
+  }
 }
 @media (max-width: 575.98px) {
   .aboutWrap .aboutInner ul {
@@ -1935,7 +1954,7 @@ h1, h2 {
     font-size: 28px !important;
   }
   .statisticsBox .iconBox {
-    min-height: auto;
+    height: 60px;
   }
   .aboutWrap .aboutImg {
     height: 310px;
