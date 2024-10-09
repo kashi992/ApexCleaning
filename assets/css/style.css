@@ -109,6 +109,10 @@ html {
   box-sizing: border-box;
 }
 
+html.__html {
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
 }
@@ -829,7 +833,7 @@ h1, h2 {
   opacity: 0;
   visibility: hidden;
   transition: all 0.6s ease;
-  z-index: 2;
+  z-index: 3;
 }
 .overlay.__show {
   opacity: 1;
@@ -1085,6 +1089,9 @@ h1, h2 {
 }
 .servicesWrap .slick-arrow.slick-next-service {
   right: -50px;
+}
+.servicesWrap .slick-arrow.slick-disabled {
+  opacity: 0.5;
 }
 
 .serviceBox {
@@ -1402,6 +1409,9 @@ h1, h2 {
 }
 .threeColGrid .serviceBox.__Box {
   margin: 0;
+}
+.threeColGrid.__oneBox .serviceBox.__Box {
+  grid-column: 2;
 }
 
 .contactInner {
@@ -1872,6 +1882,13 @@ h1, h2 {
   .contactInner .contactBox {
     gap: 10px 15px;
   }
+  .threeColGrid.__oneBox {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .threeColGrid.__oneBox .serviceBox.__Box {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
 }
 @media (max-width: 575.98px) {
   .aboutWrap .aboutInner ul {
@@ -1939,5 +1956,12 @@ h1, h2 {
   .contactInner form input.customBtn {
     padding: 16px 20px;
     margin-top: 20px;
+  }
+  .threeColGrid.__oneBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .threeColGrid.__oneBox .serviceBox.__Box {
+    grid-column-start: auto;
+    grid-column-end: auto;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -16,7 +16,9 @@ html {
 * {
     box-sizing: border-box;
 }
-
+html.__html{
+    overflow: hidden;
+}
 img {
     max-width: 100%;
 }

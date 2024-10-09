@@ -476,6 +476,13 @@
     .contactInner .contactBox {
         gap: 10px 15px;
     }
+    .threeColGrid.__oneBox{
+        grid-template-columns: repeat(4, 1fr);
+        .serviceBox.__Box{
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+    }
 }
 
 //  mobile 
@@ -563,6 +570,13 @@
     .contactInner form input.customBtn {
         padding: 16px 20px;
         margin-top: 20px;
+    }
+    .threeColGrid.__oneBox {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .threeColGrid.__oneBox .serviceBox.__Box {
+        grid-column-start: auto;
+        grid-column-end: auto;
     }
 
 }

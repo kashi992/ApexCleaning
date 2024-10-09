@@ -70,11 +70,11 @@ $(document).ready(function () {
     // service slick start 
     $('.serviceInner').slick({
         speed: 1500,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
         slidesToShow: 3,
         slidesToScroll: 1,
-        infinite: true,
+        infinite: false,
         arrows: true,
         swipe: true,
         swipeToSlide: true,
@@ -86,7 +86,7 @@ $(document).ready(function () {
         responsive: [{
             breakpoint: 1100,
             settings: {
-                slidesToShow: 2,
+                slidesToShow: 3,
             }
 
         }, {
@@ -116,7 +116,7 @@ $(document).ready(function () {
 
         // Toggle 'show' class on navbar when toggler is clicked
         $navbar.toggleClass("show");
-        
+        $("html").addClass("__html");
         // Check the new state after toggling
         if ($navbar.hasClass("show")) {
             $overlay.addClass("__show");  // Add '__show' class to overlay if navbar now has 'show'
@@ -130,6 +130,7 @@ $(document).ready(function () {
         event.stopPropagation(); // Stop propagation to avoid triggering document click
         $navbar.removeClass("show");
         $overlay.removeClass("__show");  // Ensure overlay class is removed when cross is clicked
+        $("html").removeClass("__html");
     });
 
     // Click outside navbar
@@ -138,6 +139,7 @@ $(document).ready(function () {
         if (!$navbar.is(event.target) && $navbar.has(event.target).length === 0 && !$navbarToggler.is(event.target) && !$crossIcon.is(event.target)) {
             $navbar.removeClass("show");
             $overlay.removeClass("__show");  // Also remove '__show' if clicking outside the navbar area
+            $("html").removeClass("__html");
         }
     });
     //    onclick outside navbar 

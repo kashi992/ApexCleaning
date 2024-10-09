@@ -164,5 +164,13 @@
     grid-template-columns: repeat(3, 1fr);
     .serviceBox.__Box{
         margin: 0;
+        
     }
+    &.__oneBox{
+        .serviceBox.__Box{
+            grid-column: 2;
+        }
+    
+    }
+    
 }
