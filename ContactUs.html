@@ -175,16 +175,16 @@
                         <a href=""><i class="fab fa-youtube" aria-hidden="true"></i></a>
                     </div>
                 </div>
-                <form action="" style="grid-area: b;">
+                <form action="send-email.php" method="POST" style="grid-area: b;">
                     <h2 class="fs40 titleDot text-center mx-auto">Get in Touch</h2>
                     <div class="formGroup">
-                        <input type="text" class="form-control" placeholder="Your Name">
+                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="formGroup">
-                        <input type="text" class="form-control" placeholder="Email">
+                        <input type="text" class="form-control" name="email" placeholder="Email" required>
                     </div>
                     <div class="formGroup">
-                       <textarea class="form-control" name="" id="" placeholder="Message"></textarea>
+                       <textarea class="form-control" name="message" id="" placeholder="Message"></textarea>
                     </div>
                     <div class="formGroup">
                        <input type="submit" value="Send Message" class="customBtn">
